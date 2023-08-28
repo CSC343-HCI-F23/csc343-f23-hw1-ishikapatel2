@@ -1,0 +1,33 @@
+{
+    "directed": false,
+    "multigraph": false,
+    "graph": {},
+    "nodes": [
+        {
+            "id": "1",
+            "name": "The Shawshank Redemption",
+            "genre": "Drama"
+        },
+        {
+            "id": "2",
+            "name": "Die Hard 2",
+            "genre": "Action,Thriller"
+        },
+        {
+            "id": "3",
+            "name": "Lean On Me",
+            "genre": "Action,Drama"
+        }
+
+    ],
+    "links": [
+        {
+            "source": "1",
+            "target": "2"
+        },
+        {
+            "source": "1",
+            "target": "3"
+        }
+    ]
+}
