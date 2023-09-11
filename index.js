@@ -39,7 +39,7 @@ class GraphClass {
   }
 
   writeGraphToJSON(filePath) {
-    const data = JSON.stringify(this.degreeHistogram);
+    const data = JSON.stringify(this.graph);
     try {
       fs.writeFileSync(filePath, data);
       console.log(`Graph data written to ${filePath}`);
@@ -101,10 +101,9 @@ class GraphClass {
     svgContent += `<text x="${-svgHeight / 2}" y="15" transform="rotate(-90)" font-size="14" text-anchor="middle"># of Edges</text>`;
 
     // x-axis number line and tick marks
-    // credit to Chat GPT for helping me figure out who to draw tick marks 
+    // credit to Chat GPT for helping me figure out who to draw tick marks for x and y axis
     svgContent += `<line x1="${margin.left}" y1="${svgHeight - margin.bottom}" x2="${svgWidth - margin.right}" y2="${svgHeight - margin.bottom}" stroke="black" />`;
     for (const degree in this.degreeHistogram) {
-      console.log(degree + " " + this.degreeHistogram[degree]);
       const xTick = margin.left + ((barWidth + barSpacing) * (parseInt(degree)) + barWidth / 2);
       svgContent += `<line x1="${xTick}" y1="${svgHeight - margin.bottom}" x2="${xTick}" y2="${svgHeight - margin.bottom + 5}" stroke="black" />`;
       svgContent += `<text x="${xTick}" y="${svgHeight - margin.bottom + 20}" text-anchor="middle" font-size="12">${degree}</text>`;
